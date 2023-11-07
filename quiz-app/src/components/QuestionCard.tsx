@@ -1,28 +1,45 @@
-type QuestionCardProps = {
+import React from 'react';
+// Types
+import { AnswerObject } from '../App';
+// Styles
+import { Wrapper, ButtonWrapper } from './QuestionCard.styles';
+
+type Props = {
     question: string;
     answers: string[];
-    callback: any;
-    userAnswer: boolean | undefined;
+    callback: (e: React.MouseEvent<HTMLButtonElement>) => void;
+    userAnswer: AnswerObject | undefined;
     questionNr: number;
     totalQuestions: number;
-}
+};
 
-export const QuestionCard = (props: QuestionCardProps) => (
-    <div>
-        <p className={'number'}>
-            Question: {props.questionNr} / {props.totalQuestions}
+const QuestionCard: React.FC<Props> = ({
+                                           question,
+                                           answers,
+                                           callback,
+                                           userAnswer,
+                                           questionNr,
+                                           totalQuestions,
+                                       }) => (
+    <Wrapper>
+        <p className='number'>
+            Question: {questionNr} / {totalQuestions}
         </p>
-        <p dangerouslySetInnerHTML={{__html: props.question}} />
+        <p dangerouslySetInnerHTML={{ __html: question }} />
         <div>
-            {props.answers.map(answer => (
-                <div key={answer}>
-                    <button disabled={props.userAnswer} onClick={props.callback}>
-                        <span dangerouslySetInnerHTML={{__html: answer}} />
+            {answers.map((answer) => (
+                <ButtonWrapper
+                    key={answer}
+                    correct={userAnswer?.correctAnswer === answer}
+                    userClicked={userAnswer?.answer === answer}
+                >
+                    <button disabled={!!userAnswer} value={answer} onClick={callback}>
+                        <span dangerouslySetInnerHTML={{ __html: answer }} />
                     </button>
-                </div>
+                </ButtonWrapper>
             ))}
         </div>
-    </div>
+    </Wrapper>
 );
 
-// Path: src/components/QuestionCard.tsx
+export default QuestionCard;
