@@ -5,7 +5,7 @@ import QuestionCard from './components/QuestionCard.tsx';
 // types
 import { QuestionState, Difficulty } from './API.ts';
 // Styles
-import {GlobalStyle, Wrapper} from "./App.styles.tsx";
+import { GlobalStyle, Wrapper } from "./App.styles.tsx";
 
 export type AnswerObject = {
     question: string;
@@ -96,7 +96,9 @@ const App: React.FC = () => {
                         Next Question
                     </button>
                 ) : null}
+                
             </Wrapper>
+
         </>
     );
 };
