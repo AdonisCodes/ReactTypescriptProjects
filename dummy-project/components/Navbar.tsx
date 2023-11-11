@@ -2,6 +2,7 @@
 
 import React, {useState} from 'react'
 import Link from "next/link";
+import About from "@/app/About";
 
 type NavItemProps = {
     activeItem: string,
@@ -26,14 +27,22 @@ const Navbar = () => {
     const [activeItem, setActiveItem] = useState<string>('About')
 
     return (
-        <div className={'flex justify-between px-5 py-3 my-3'}>
-            <span className={'font-bold text-green text-xl border-b-4 border-green'}>{activeItem}</span>
+        <div className={'flex justify-between flex-col px-5 py-3 my-3'}>
+            <nav className={'w-full flex justify-between'}>
+                <span className={'font-bold text-green text-xl border-b-4 border-green'}>{activeItem}</span>
 
-            <div className={'flex space-x-3 text-red-400 font-lg ml-auto'}>
-                <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name={'About'} />
-                <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name={'Projects'} />
-                <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name={'Resume'} />
-            </div>
+                <div className={'flex space-x-3 text-red-400 font-lg ml-auto'}>
+                    <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name={'About'} />
+                    <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name={'Projects'} />
+                    <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name={'Resume'} />
+                </div>
+            </nav>
+
+            {
+                activeItem === 'About' && (
+                    <About />
+                )
+            }
         </div>
     )
 }

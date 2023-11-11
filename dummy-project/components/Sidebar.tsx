@@ -8,7 +8,7 @@ import Link from "next/link";
 const Sidebar = () => {
     return (
         <div className={'flex flex-col items-center'}>
-            <Image src='/profile_official.png' alt={'user avatar'} className={'w-32 h-32 mx-auto rounded-full'} width={100} height={100}/>
+            <Image src='/profile_official.png' alt={'user avatar'} className={'w-32 h-32 mx-auto rounded-full mt-[23px]'} width={100} height={100}/>
             <h3 className={'my-4 text-3xl font-medium tracking-wider font-kaushan'}>
                 <span className={'text-green-500'}>Simon{' '}</span>
                 Ferns
@@ -37,8 +37,10 @@ const Sidebar = () => {
                 <p className={'my-2'}>business@simonferns.com</p>
                 <p className={'my-2'}>+27 81 270 5873</p>
             </div>
+            <div className={'flex flex-col justify-center items-center w-full h-full'}>
             <button className={'bg-gradient-to-r from-green to-blue-400 w-8/12 py-1 my-2 focus:outline-none text-white rounded-md'}><Link href={'mailto:business@simonferns.com'}>Email Me</Link></button>
-            <button className={'bg-gradient-to-r from-green to-blue-400 w-8/12 mb-5 py-1 my-2 text-white rounded-md'}>Toggle Theme</button>
+            <button className={'bg-gradient-to-r from-green to-blue-400 w-8/12 py-1 my-2 text-white rounded-md'}>Toggle Theme</button>
+            </div>
         </div>
     )
 }
