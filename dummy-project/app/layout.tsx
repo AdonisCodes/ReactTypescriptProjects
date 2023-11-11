@@ -2,8 +2,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
-
 export const metadata: Metadata = {
   title: 'Dummy Portfolio',
   description: 'Portfolio built with Next.js',
@@ -16,7 +14,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap"
+            rel="stylesheet"
+        />
+        <title>Dummy portfolio</title>
+      </head>
+      <body className={'bg-gradient-to-r from-green to-blue-400'}>{children}</body>
     </html>
   )
 }
