@@ -3,6 +3,7 @@
 import React, {useState} from 'react'
 import Link from "next/link";
 import About from "@/app/About";
+import Resume from "@/app/Resume";
 
 type NavItemProps = {
     activeItem: string,
@@ -31,7 +32,7 @@ const Navbar = () => {
             <nav className={'w-full flex justify-between'}>
                 <span className={'font-bold text-green text-xl border-b-4 border-green'}>{activeItem}</span>
 
-                <div className={'flex space-x-3 text-red-400 font-lg ml-auto'}>
+                <div className={'flex space-x-3 font-lg ml-auto'}>
                     <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name={'About'} />
                     <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name={'Projects'} />
                     <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name={'Resume'} />
@@ -41,6 +42,11 @@ const Navbar = () => {
             {
                 activeItem === 'About' && (
                     <About />
+                )
+            }
+            {
+                activeItem === 'Resume' && (
+                    <Resume />
                 )
             }
         </div>

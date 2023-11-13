@@ -1,4 +1,6 @@
 import React from 'react'
+import {languages, tools} from "@/data";
+import Bar from "@/components/Bar";
 
 const Resume = () => {
     return (
@@ -20,8 +22,33 @@ const Resume = () => {
                     </div>
                 </div>
             </div>
-        {/* Education */}
         {/* language & tools */}
+            <div className="grid gap-6 md:grid-cols-2">
+                <div>
+                    <h5 className={'my-3 text-2xl font-bold'}>
+                        Languages & Frameworks
+                    </h5>
+                        <div className={'my-2'}>
+                            {
+                                languages.map((language, i) => (
+                                        <Bar data={language} key={language.name}/>
+                                ))
+                            }
+                        </div>
+                </div>
+                <div>
+                    <h5 className={'my-3 text-xl font-bold'}>
+                        Tools & Software
+                    </h5>
+                    <div className={'my-2'}>
+                        {
+                            tools.map((tool, i) => (
+                                        <Bar data={tool} key={tool.name}/>
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

@@ -47,11 +47,6 @@ export const languages: Skill[] = [
         icon: FaPython
     },
     {
-        name: 'JavaScript',
-        level: '95%',
-        icon: FaJs
-    },
-    {
         name: 'TypeScript',
         level: '100%',
         icon: SiTypescript
@@ -90,7 +85,7 @@ export const tools: Skill[] = [
         icon: FaKeyboard
     },
     {
-        name: 'docker & kubernetes',
+        name: 'Docker & KUB',
         level: '60%',
         icon: FaDocker
     },
