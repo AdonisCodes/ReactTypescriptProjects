@@ -41,7 +41,7 @@ const Board = () => {
         if (!winner && !squares.includes(null)) {
             setWinner('Draw')
         }
-    }, [currentPlayer]);
+    }, [currentPlayer, squares]);
 
     return (
         <>

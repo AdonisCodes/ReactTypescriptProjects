@@ -1,5 +1,5 @@
 import React from 'react'
-import {PlayerType, SquareType} from "@/components/Board";
+import {SquareType} from "@/components/Board";
 
 type SquareProps = {
     value: SquareType
