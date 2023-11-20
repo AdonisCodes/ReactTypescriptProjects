@@ -5,7 +5,7 @@ const StickyBar = () => {
     return (
         <header className={'flex w-[100vw]'}>
             <div className={'flex justify-between max-w-7xl mx-auto'}>
-            <div className={'flex items-center space-x-5'}>
+            <div className={'flex items-center space-x-5 md:mr-40 mr-20'}>
                 <div>
                     <Link href="/" >
                         <img src={'https://miro.medium.com/v2/resize:fit:8978/1*s986xIGqhfsN8U--09_AdA.png'} className={'w-44 object-contain cursor-pointer'} alt={"The logo"}/>
